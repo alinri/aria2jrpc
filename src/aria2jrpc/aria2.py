@@ -1,16 +1,13 @@
 import base64
-from enum import Enum
+
+import requests
+
 from aria2jrpc.models import (
     Aria2CommonOptions,
     Aria2GlobalOptions,
     Aria2InputOptions,
+    HowPosition,
 )
-import requests
-
-class HowPosition(str, Enum):
-    POST_SET = "POST_SET"
-    POS_CUR = "POS_CUR"
-    POS_END = "POS_END"
 
 
 class Aria2JRPC:
@@ -46,7 +43,10 @@ class Aria2JRPC:
             self._base_url,
             json=json_data,
         )
-        return res.json()
+        json_res = res.json()
+        if error := json_res.get("error"):
+            raise Exception(error["message"])
+        return json_res
 
     def _download(
         self,
@@ -439,7 +439,7 @@ class Aria2JRPC:
 if __name__ == "__main__":
     my_aria = Aria2JRPC(
         "http://127.0.0.1:6800",
-        secret="shit",
+        secret="shitj",
         global_options=Aria2GlobalOptions(
             max_concurrent_downloads=1,
             continue_=1,

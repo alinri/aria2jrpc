@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "d2bf79d9384a0e6ea88d71e5ebfc29aab3df0e05f243347de07a524055aeccc7"
+            "sha256": "be54bd3e4218ef620d824def804d3418a7ec75aea47813a1bea4e600062bf21f"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -16,6 +16,10 @@
         ]
     },
     "default": {
+        "aria2jrpc": {
+            "editable": true,
+            "path": "."
+        },
         "certifi": {
             "hashes": [
                 "sha256:539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082",

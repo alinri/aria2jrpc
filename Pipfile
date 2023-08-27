@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 requests = "*"
+aria2jrpc = {editable = true, path = "."}
 
 [dev-packages]
 black = "*"

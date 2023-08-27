@@ -1,4 +1,11 @@
 from dataclasses import asdict, dataclass
+from enum import Enum
+
+
+class HowPosition(str, Enum):
+    POST_SET = "POST_SET"
+    POS_CUR = "POS_CUR"
+    POS_END = "POS_END"
 
 
 @dataclass
